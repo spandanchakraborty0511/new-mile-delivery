@@ -3,7 +3,7 @@ services:
     name: lastmile-delivery
     env: node
     plan: free
-    buildCommand: npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend && npm run migrate --prefix backend
+    buildCommand: npm install --include=dev --prefix backend && npm install --include=dev --prefix frontend && npm run build --prefix frontend && npm run migrate --prefix backend
     startCommand: npm start --prefix backend
     envVars:
       - key: NODE_ENV
