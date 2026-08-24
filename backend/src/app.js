@@ -16,7 +16,9 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.use(cors());
 app.use(express.json());
 app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'combined'));
@@ -31,7 +33,20 @@ app.use('/api/agents', agentRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/ai', aiRoutes);
 
-app.use(notFound);
+const path = require('path');
+
+// Serve static frontend in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+  
+  // Catch-all route for React Router
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../frontend/dist', 'index.html'));
+  });
+} else {
+  app.use(notFound);
+}
+
 app.use(errorHandler);
 
 module.exports = app;
