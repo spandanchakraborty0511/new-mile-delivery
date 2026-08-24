@@ -2,6 +2,52 @@
 
 A complete, end-to-end Last-Mile Delivery tracking system built for Unthinkable. This platform handles everything from dynamic rate calculation and real-time package tracking to smart agent dispatching and an autonomous AI support assistant.
 
+## Live Demo
+🚀 **[https://lastmile-delivery-eubf.onrender.com](https://lastmile-delivery-eubf.onrender.com/)**
+
+### Default Testing Credentials
+- **Admin:** `admin@example.com` / `admin123`
+- **Customer:** (Click "Sign Up" to create your own, or test with any registered email)
+- **Agent:** (Log in as Admin, create an Agent on the "Agents" tab, and log in with those credentials)
+
+---
+
+## How to Use (Step-by-Step Guide)
+
+### 1. Configure the System (Admin)
+1. **Log in** using the Admin credentials above.
+2. Navigate to **Zones** to create geographic delivery zones (e.g., "North Zone", "South Zone") and map real-world pincodes to them.
+3. Navigate to **Rate Cards** to define the pricing rules (Base Fee + Per Kg Rate) for delivering packages between these zones.
+4. Navigate to **Agents** to hire (register) new Delivery Agents and assign them to specific zones.
+
+![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard+Screenshot)
+
+### 2. Place an Order (Customer)
+1. Log out of the Admin account and click **Sign Up** to create a Customer account.
+2. On your Customer Dashboard, click **Create New Order**.
+3. Use the OpenStreetMap autocomplete to fill in your Pickup and Drop-off addresses.
+4. Enter the dimensions and weight of your package.
+5. Click **Calculate Rate Quote** to ping the Rate Engine.
+6. Click **Confirm & Place Order** to dispatch it!
+
+![Customer Portal](https://via.placeholder.com/800x400?text=Customer+Portal+Screenshot)
+
+### 3. Fulfill the Delivery (Agent)
+1. Log out of the Customer account and log in using the Agent credentials you created in Step 1.
+2. The Risk-Scoring engine will have automatically assigned the Customer's pending order to you if you were in the correct zone.
+3. You will see the package in your active queue.
+4. Click through the lifecycle buttons (`Picked Up` → `In Transit` → `Out for Delivery` → `Delivered`) to complete the flow.
+5. *(In a production environment with SMTP configured, this sends real-time email updates to the Customer).*
+
+![Agent Dashboard](https://via.placeholder.com/800x400?text=Agent+Dashboard+Screenshot)
+
+### 4. Talk to Aria (AI Assistant)
+At any point, click the floating **Aria AI Assistant** button in the bottom right corner of the screen.
+Ask her to:
+- *"Calculate the cost to ship 5kg from 400038 to 400058."*
+- *"Where is order #1?"*
+- *"Can you reschedule my failed delivery?"*
+
 ## Final Tech Stack
 - **Backend:** Node.js, Express, PostgreSQL
 - **Frontend:** React, Vite, Tailwind CSS v4, Lucide React
