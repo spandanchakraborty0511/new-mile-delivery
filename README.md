@@ -20,7 +20,7 @@ A complete, end-to-end Last-Mile Delivery tracking system built for Unthinkable.
 3. Navigate to **Rate Cards** to define the pricing rules (Base Fee + Per Kg Rate) for delivering packages between these zones.
 4. Navigate to **Agents** to hire (register) new Delivery Agents and assign them to specific zones.
 
-![Admin Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard+Screenshot)
+
 
 ### 2. Place an Order (Customer)
 1. Log out of the Admin account and click **Sign Up** to create a Customer account.
@@ -30,7 +30,7 @@ A complete, end-to-end Last-Mile Delivery tracking system built for Unthinkable.
 5. Click **Calculate Rate Quote** to ping the Rate Engine.
 6. Click **Confirm & Place Order** to dispatch it!
 
-![Customer Portal](https://via.placeholder.com/800x400?text=Customer+Portal+Screenshot)
+
 
 ### 3. Fulfill the Delivery (Agent)
 1. Log out of the Customer account and log in using the Agent credentials you created in Step 1.
@@ -39,7 +39,7 @@ A complete, end-to-end Last-Mile Delivery tracking system built for Unthinkable.
 4. Click through the lifecycle buttons (`Picked Up` → `In Transit` → `Out for Delivery` → `Delivered`) to complete the flow.
 5. *(In a production environment with SMTP configured, this sends real-time email updates to the Customer).*
 
-![Agent Dashboard](https://via.placeholder.com/800x400?text=Agent+Dashboard+Screenshot)
+
 
 ### 4. Talk to Aria (AI Assistant)
 At any point, click the floating **Aria AI Assistant** button in the bottom right corner of the screen.
